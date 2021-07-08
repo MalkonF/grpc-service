@@ -12,6 +12,11 @@ service FretesService {
   rpc calculaFrete(CalculaFreteRequest) returns (CalculaFreteResponse) {}
 }
 
+message ErrorDetails {
+  int32 code = 1;
+  string message = 2;
+}
+
 message CalculaFreteRequest {
   string cep = 1;
 }
@@ -28,3 +33,4 @@ message FretesRequest {
 message FretesReply {
   string message = 1;
 }
+
