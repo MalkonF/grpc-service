@@ -1,3 +1,18 @@
 micronaut:
   application:
     name: fretes
+
+grpc:
+  server:
+    health:
+      enabled: true
+
+
+endpoints:
+  all:
+    #port: 8085 #usa porta padrão do http-server ou assume essa porta
+    sensitive: false #por padrão a maioria dos endpoints são protegidos por segurança
+  health:
+    enabled: true
+    sensitive: false #somente users autenticados podem ver os endpoints
+    details-visible: ANONYMOUS #qualquer user pode ver os detalhes endpoints

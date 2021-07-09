@@ -15,6 +15,7 @@ repositories {
 }
 
 micronaut {
+    runtime "netty" //rodar o web server netty porta 8080 para poder gerenciar os endpoints do healthcheck
     testRuntime("junit5")
     processing {
         incremental(true)
@@ -31,6 +32,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
     runtimeOnly("ch.qos.logback:logback-classic")
     implementation("io.micronaut:micronaut-validation")
+    implementation("io.micronaut:micronaut-management")
 
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
 
